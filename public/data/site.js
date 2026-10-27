@@ -212,9 +212,9 @@ window.SITE = {
             pitch: -6,
             yaw: 15,
             hotspots: [
-              { pitch: -8, yaw: 180, target: "bed", targetPitch: -10, targetYaw: 20, text: { vi: "Phòng ngủ", en: "Bedroom" } },
-              { pitch: -8, yaw: -115, target: "bath", targetPitch: -8, targetYaw: 0, text: { vi: "Phòng tắm", en: "Bathroom" } },
-              { pitch: -6, yaw: 120, target: "balcony", targetPitch: -8, targetYaw: 10, text: { vi: "Ban công", en: "Balcony" } }
+              { pitch: -12, yaw: 48, target: "bed", targetPitch: -10, targetYaw: 20, text: { vi: "Phòng ngủ", en: "Bedroom" } },
+              { pitch: -10, yaw: -18, target: "bath", targetPitch: -8, targetYaw: 0, text: { vi: "Phòng tắm", en: "Bathroom" } },
+              { pitch: -4, yaw: 18, target: "balcony", targetPitch: -8, targetYaw: 10, text: { vi: "Ban công", en: "Balcony" } }
             ],
             info: [
               { pitch: 2, yaw: 0, text: { vi: "Lò sưởi trong ảnh là chi tiết minh họa của tư liệu gốc, không phải nội thất bàn giao.", en: "The fireplace belongs to the source photo. It is not a handover finish." } }
@@ -227,8 +227,8 @@ window.SITE = {
             pitch: -10,
             yaw: 20,
             hotspots: [
-              { pitch: -8, yaw: 175, target: "living", targetPitch: -6, targetYaw: 15, text: { vi: "Phòng khách", en: "Living room" } },
-              { pitch: -8, yaw: -120, target: "bath", targetPitch: -8, targetYaw: 0, text: { vi: "Phòng tắm", en: "Bathroom" } }
+              { pitch: -10, yaw: 52, target: "living", targetPitch: -6, targetYaw: 15, text: { vi: "Phòng khách", en: "Living room" } },
+              { pitch: -8, yaw: -12, target: "bath", targetPitch: -8, targetYaw: 0, text: { vi: "Phòng tắm", en: "Bathroom" } }
             ],
             info: [
               { pitch: -16, yaw: 25, text: { vi: "Giường và cửa sổ mẫu. View ngoài cửa sổ không thuộc dự án.", en: "Sample bed and window. The view outside is not the project." } }
@@ -241,8 +241,8 @@ window.SITE = {
             pitch: -8,
             yaw: 0,
             hotspots: [
-              { pitch: -6, yaw: 175, target: "living", targetPitch: -6, targetYaw: -30, text: { vi: "Phòng khách", en: "Living room" } },
-              { pitch: -6, yaw: 115, target: "bed", targetPitch: -10, targetYaw: 25, text: { vi: "Phòng ngủ", en: "Bedroom" } }
+              { pitch: -8, yaw: 36, target: "living", targetPitch: -6, targetYaw: -18, text: { vi: "Phòng khách", en: "Living room" } },
+              { pitch: -8, yaw: -28, target: "bed", targetPitch: -10, targetYaw: 20, text: { vi: "Phòng ngủ", en: "Bedroom" } }
             ],
             info: [
               { pitch: -6, yaw: -8, text: { vi: "Khu lavabo mẫu. Thiết bị vệ sinh trong ảnh không phải danh mục bàn giao.", en: "Sample vanity. The fittings in the photo are not a handover list." } }
@@ -255,7 +255,7 @@ window.SITE = {
             pitch: -8,
             yaw: 10,
             hotspots: [
-              { pitch: -6, yaw: 180, target: "living", targetPitch: -6, targetYaw: 90, text: { vi: "Vào phòng khách", en: "Back to the living room" } }
+              { pitch: -8, yaw: 42, target: "living", targetPitch: -6, targetYaw: 15, text: { vi: "Vào phòng khách", en: "Back to the living room" } }
             ],
             info: [
               { pitch: -4, yaw: 15, text: { vi: "Ban công minh họa. Cây xanh trong ảnh là phong cảnh của tư liệu CC0.", en: "Illustrative balcony. The trees are part of the CC0 source photo." } }
@@ -301,8 +301,8 @@ window.SITE = {
             pitch: -4,
             yaw: 0,
             hotspots: [
-              { pitch: -8, yaw: 95, target: "living", targetPitch: -2, targetYaw: -15, text: { vi: "Phòng khách", en: "Living room" } },
-              { pitch: -8, yaw: 175, target: "bed", targetPitch: -6, targetYaw: 5, text: { vi: "Phòng ngủ", en: "Bedroom" } }
+              { pitch: -10, yaw: 38, target: "living", targetPitch: -2, targetYaw: -15, text: { vi: "Phòng khách", en: "Living room" } },
+              { pitch: -10, yaw: -32, target: "bed", targetPitch: -6, targetYaw: 5, text: { vi: "Phòng ngủ", en: "Bedroom" } }
             ],
             info: [
               { pitch: 6, yaw: -5, text: { vi: "Cầu thang và cửa trong ảnh là sảnh mẫu, không phải lõi thang của dự án.", en: "The stair and door are a sample hall, not the project core." } }
@@ -315,11 +315,11 @@ window.SITE = {
             pitch: -2,
             yaw: -15,
             hotspots: [
-              { pitch: -8, yaw: 125, target: "entry", targetPitch: -4, targetYaw: 0, text: { vi: "Sảnh", en: "Hall" } },
-              { pitch: -6, yaw: -105, target: "bed", targetPitch: -6, targetYaw: 0, text: { vi: "Phòng ngủ", en: "Bedroom" } }
+              { pitch: -8, yaw: 22, target: "entry", targetPitch: -4, targetYaw: 0, text: { vi: "Sảnh", en: "Hall" } },
+              { pitch: -8, yaw: -48, target: "bed", targetPitch: -6, targetYaw: 5, text: { vi: "Phòng ngủ", en: "Bedroom" } }
             ],
             info: [
-              { pitch: -4, yaw: 40, text: { vi: "Bàn ghế minh họa. Không phải gói nội thất đang bán.", en: "Illustrative furniture. Not a furniture package on sale." } }
+              { pitch: -4, yaw: 0, text: { vi: "Bàn ghế minh họa. Không phải gói nội thất đang bán.", en: "Illustrative furniture. Not a furniture package on sale." } }
             ]
           },
           {
@@ -329,8 +329,8 @@ window.SITE = {
             pitch: -6,
             yaw: 5,
             hotspots: [
-              { pitch: -8, yaw: 180, target: "living", targetPitch: -2, targetYaw: 20, text: { vi: "Phòng khách", en: "Living room" } },
-              { pitch: -6, yaw: -90, target: "entry", targetPitch: -4, targetYaw: 10, text: { vi: "Ra sảnh", en: "Back to the hall" } }
+              { pitch: -8, yaw: 40, target: "living", targetPitch: -2, targetYaw: -15, text: { vi: "Phòng khách", en: "Living room" } },
+              { pitch: -8, yaw: -28, target: "entry", targetPitch: -4, targetYaw: 0, text: { vi: "Ra sảnh", en: "Back to the hall" } }
             ],
             info: [
               { pitch: 0, yaw: 15, text: { vi: "Cửa sổ lớn trong ảnh mẫu. Hướng nhìn thật của căn cần chụp lại.", en: "Large window in the sample photo. The real aspect needs its own shoot." } }
@@ -376,8 +376,8 @@ window.SITE = {
             pitch: -6,
             yaw: 10,
             hotspots: [
-              { pitch: -6, yaw: 125, target: "suite", targetPitch: 0, targetYaw: 0, text: { vi: "Phòng ngủ chính", en: "Primary bedroom" } },
-              { pitch: -6, yaw: -155, target: "terrace", targetPitch: -8, targetYaw: 35, text: { vi: "Sân thượng", en: "Terrace" } }
+              { pitch: -10, yaw: 46, target: "suite", targetPitch: 0, targetYaw: 0, text: { vi: "Phòng ngủ chính", en: "Primary bedroom" } },
+              { pitch: -10, yaw: -24, target: "terrace", targetPitch: -8, targetYaw: 35, text: { vi: "Sân thượng", en: "Terrace" } }
             ],
             info: [
               { pitch: 4, yaw: -20, text: { vi: "Trần và sàn gỗ trong ảnh là minh họa, không phải spec vật liệu.", en: "The timber ceiling and floor illustrate the viewer. They are not a material spec." } }
@@ -390,7 +390,7 @@ window.SITE = {
             pitch: 0,
             yaw: 0,
             hotspots: [
-              { pitch: -8, yaw: 170, target: "living", targetPitch: -6, targetYaw: 0, text: { vi: "Phòng khách", en: "Living room" } }
+              { pitch: -10, yaw: 36, target: "living", targetPitch: -6, targetYaw: 10, text: { vi: "Phòng khách", en: "Living room" } }
             ],
             info: [
               { pitch: 8, yaw: 0, text: { vi: "Cửa kính mẫu. Khung cảnh ngoài trời không thuộc dự án Sông Xanh.", en: "Sample glazing. The outdoor scene is not Sông Xanh Residence." } }
@@ -403,7 +403,7 @@ window.SITE = {
             pitch: -8,
             yaw: 35,
             hotspots: [
-              { pitch: -8, yaw: 180, target: "living", targetPitch: -4, targetYaw: -20, text: { vi: "Vào nhà", en: "Back inside" } }
+              { pitch: -10, yaw: 68, target: "living", targetPitch: -6, targetYaw: 10, text: { vi: "Vào nhà", en: "Back inside" } }
             ],
             info: [
               { pitch: -12, yaw: 40, text: { vi: "Sân thượng minh họa. Vườn trong ảnh thuộc tư liệu CC0 Poly Haven.", en: "Illustrative terrace. The garden is from a Poly Haven CC0 photo." } }

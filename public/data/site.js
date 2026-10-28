@@ -176,8 +176,8 @@ window.SITE = {
   },
   properties: [
     {
-      slug: "4d7a6d64-89d8-439a-a601-d896202e76ea",
-      code: "Vành đai 2.5",
+      slug: "n1",
+      code: "N1-01",
       type: "house",
       status: "open",
       beds: "—",
@@ -200,7 +200,7 @@ window.SITE = {
           en: "The 360° tour currently shows the balcony. The photo was tidied with AI, so details may differ slightly from reality."
         }
       ],
-      cover: "/assets/gallery/card-vd25.jpg",
+      cover: "/assets/gallery/card-n1.jpg",
       coverAlt: { vi: "Ban công nhà gần Vành đai 2.5", en: "Balcony of the house near Ring Road 2.5" },
       tour: {
         first: "balcony",
@@ -208,7 +208,7 @@ window.SITE = {
           {
             id: "balcony",
             name: { vi: "Ban công", en: "Balcony" },
-            image: "/assets/panoramas/vd25-balcony.jpg",
+            image: "/assets/panoramas/n1-balcony.jpg",
             pitch: 0,
             yaw: 0,
             hotspots: [],

@@ -12,7 +12,7 @@
     langToEn: { vi: "English", en: "English" },
     langToVi: { vi: "Tiếng Việt", en: "Tiếng Việt" },
     book: { vi: "Đặt lịch xem", en: "Book a viewing" },
-    seeHomes: { vi: "Xem căn mẫu", en: "View sample homes" },
+    seeHomes: { vi: "Xem các căn", en: "View homes" },
     seeTour: { vi: "Xem tour 360°", en: "Open the 360° tour" },
     priceCta: { vi: "Nhận bảng giá khi có", en: "Ask when prices are published" },
     nav: {
@@ -24,28 +24,28 @@
       homes: { vi: "Căn hộ", en: "Homes" },
       contact: { vi: "Liên hệ", en: "Contact" }
     },
-    listingTitle: { vi: "Căn hộ mẫu", en: "Sample homes" },
+    listingTitle: { vi: "Danh sách nhà", en: "Homes" },
     listingLede: {
-      vi: "Lọc theo số phòng ngủ, loại căn và trạng thái. Tất cả đều là dữ liệu mẫu.",
-      en: "Filter by bedrooms, type, and status. Every record is sample data."
+      vi: "Lọc theo số phòng ngủ, loại căn và trạng thái. Bấm vào căn để xem tour 360°.",
+      en: "Filter by bedrooms, type, and status. Open a home to walk its 360° tour."
     },
     all: { vi: "Tất cả", en: "All" },
     beds: { vi: "Phòng ngủ", en: "Bedrooms" },
     type: { vi: "Loại căn", en: "Type" },
     status: { vi: "Trạng thái", en: "Status" },
     types: { apartment: { vi: "Căn hộ", en: "Apartment" }, house: { vi: "Nhà riêng", en: "House" }, penthouse: { vi: "Penthouse", en: "Penthouse" } },
-    statuses: { open: { vi: "Đang mở xem mẫu", en: "Sample viewing open" }, held: { vi: "Giữ chỗ mẫu", en: "Sample hold" } },
-    count: { vi: "căn mẫu", en: "sample homes" },
-    empty: { vi: "Không có căn mẫu khớp bộ lọc.", en: "No sample home matches these filters." },
+    statuses: { open: { vi: "Đang mở bán", en: "Open for viewing" }, held: { vi: "Đã giữ chỗ", en: "On hold" } },
+    count: { vi: "căn", en: "homes" },
+    empty: { vi: "Không có căn khớp bộ lọc.", en: "No home matches these filters." },
     reset: { vi: "Xóa bộ lọc", en: "Clear filters" },
-    area: { vi: "Diện tích mẫu", en: "Sample area" },
+    area: { vi: "Diện tích", en: "Area" },
     baths: { vi: "Phòng tắm", en: "Bathrooms" },
     floor: { vi: "Tầng", en: "Floor" },
     aspect: { vi: "Hướng", en: "Aspect" },
     price: { vi: "Giá", en: "Price" },
     unpublished: { vi: "Liên hệ — chưa công bố", en: "Ask — not published" },
     stops: { vi: "điểm nhìn", en: "viewpoints" },
-    other: { vi: "Căn mẫu khác", en: "Other sample homes" },
+    other: { vi: "Căn khác", en: "Other homes" },
     photoNote: {
       vi: "Ảnh 360° là tư liệu CC0 (Poly Haven) để demo cách dẫn tour. Không phải ảnh căn thật.",
       en: "The 360° photos are CC0 images (Poly Haven) demonstrating the tour. They are not photos of a real unit."
@@ -99,10 +99,10 @@
     another: { vi: "Viết yêu cầu khác", en: "Write another request" },
     notFound: { vi: "Không thấy trang này.", en: "This page was not found." },
     notFoundLede: {
-      vi: "Liên kết có thể đã đổi. Quay về trang chủ hoặc danh sách căn mẫu.",
-      en: "The link may have changed. Go back to the home page or the sample homes."
+      vi: "Liên kết có thể đã đổi. Quay về trang chủ hoặc danh sách nhà.",
+      en: "The link may have changed. Go back to the home page or the home list."
     },
-    missingHome: { vi: "Không có căn với mã này trong dữ liệu mẫu.", en: "No home with this id is in the sample data." },
+    missingHome: { vi: "Không tìm thấy căn với mã này.", en: "No home found with this code." },
     home: { vi: "Trang chủ", en: "Home" },
     builder: { vi: "Tạo tour 360°", en: "Create a 360° tour" },
     creditsTitle: { vi: "Nguồn", en: "Credits" },

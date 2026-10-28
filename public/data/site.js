@@ -196,19 +196,19 @@ window.SITE = {
           en: "Location: Hanoi, near Ring Road 2.5. Exact address to be added."
         },
         {
-          vi: "Tour 360° hiện có cảnh ban công. Ảnh đã được làm gọn bằng AI nên chi tiết có thể khác thực tế một chút.",
-          en: "The 360° tour currently shows the balcony. The photo was tidied with AI, so details may differ slightly from reality."
+          vi: "Tour 360° hiện có cảnh phòng giặt phơi. Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.",
+          en: "The 360° tour currently shows the laundry & drying room. The photo has been digitally staged and may differ from reality."
         }
       ],
-      cover: "/assets/gallery/card-n1.jpg",
-      coverAlt: { vi: "Ban công nhà gần Vành đai 2.5", en: "Balcony of the house near Ring Road 2.5" },
+      cover: "/assets/gallery/card-n1.jpg?v=20261029s",
+      coverAlt: { vi: "Phòng giặt phơi nhà gần Vành đai 2.5", en: "Laundry & drying room of the house near Ring Road 2.5" },
       tour: {
         first: "balcony",
         scenes: [
           {
             id: "balcony",
-            name: { vi: "Ban công", en: "Balcony" },
-            image: "/assets/panoramas/n1-balcony.jpg",
+            name: { vi: "Phòng giặt phơi", en: "Laundry & drying room" },
+            image: "/assets/panoramas/n1-balcony.jpg?v=20261029s",
             pitch: 0,
             yaw: 0,
             hotspots: [],

@@ -176,6 +176,48 @@ window.SITE = {
   },
   properties: [
     {
+      slug: "4d7a6d64-89d8-439a-a601-d896202e76ea",
+      code: "Vành đai 2.5",
+      type: "house",
+      status: "open",
+      beds: "—",
+      baths: "—",
+      area: "—",
+      floor: { vi: "Cập nhật sau", en: "To be added" },
+      aspect: { vi: "Cập nhật sau", en: "To be added" },
+      name: { vi: "Bán nhà gần đường vành đai 2.5", en: "House for sale near Ring Road 2.5" },
+      summary: {
+        vi: "Nhà rao bán tại Hà Nội, gần đường Vành đai 2.5. Giá: Liên hệ. Diện tích, số phòng và hướng sẽ cập nhật sau.",
+        en: "House for sale in Hanoi, near Ring Road 2.5. Price: contact us. Area, rooms and aspect to be added."
+      },
+      description: [
+        {
+          vi: "Vị trí: Hà Nội, gần đường Vành đai 2.5. Địa chỉ chi tiết cập nhật sau.",
+          en: "Location: Hanoi, near Ring Road 2.5. Exact address to be added."
+        },
+        {
+          vi: "Tour 360° hiện có cảnh ban công. Ảnh đã được làm gọn bằng AI nên chi tiết có thể khác thực tế một chút.",
+          en: "The 360° tour currently shows the balcony. The photo was tidied with AI, so details may differ slightly from reality."
+        }
+      ],
+      cover: "/assets/gallery/card-vd25.jpg",
+      coverAlt: { vi: "Ban công nhà gần Vành đai 2.5", en: "Balcony of the house near Ring Road 2.5" },
+      tour: {
+        first: "balcony",
+        scenes: [
+          {
+            id: "balcony",
+            name: { vi: "Ban công", en: "Balcony" },
+            image: "/assets/panoramas/vd25-balcony.jpg",
+            pitch: 0,
+            yaw: 0,
+            hotspots: [],
+            info: []
+          }
+        ]
+      }
+    },
+    {
       slug: "a1",
       code: "A1-08",
       type: "apartment",

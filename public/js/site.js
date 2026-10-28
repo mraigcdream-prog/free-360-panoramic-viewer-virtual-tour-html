@@ -33,7 +33,7 @@
     beds: { vi: "Phòng ngủ", en: "Bedrooms" },
     type: { vi: "Loại căn", en: "Type" },
     status: { vi: "Trạng thái", en: "Status" },
-    types: { apartment: { vi: "Căn hộ", en: "Apartment" }, penthouse: { vi: "Penthouse", en: "Penthouse" } },
+    types: { apartment: { vi: "Căn hộ", en: "Apartment" }, house: { vi: "Nhà riêng", en: "House" }, penthouse: { vi: "Penthouse", en: "Penthouse" } },
     statuses: { open: { vi: "Đang mở xem mẫu", en: "Sample viewing open" }, held: { vi: "Giữ chỗ mẫu", en: "Sample hold" } },
     count: { vi: "căn mẫu", en: "sample homes" },
     empty: { vi: "Không có căn mẫu khớp bộ lọc.", en: "No sample home matches these filters." },
@@ -310,7 +310,7 @@
   function listingHTML() {
     const list = filteredProperties();
     const bedValues = ["all", "2", "3"];
-    const typeValues = ["all", "apartment", "penthouse"];
+    const typeValues = ["all", "apartment", "penthouse", "house"];
     const statusValues = ["all", "open", "held"];
     const chips = function (group, values) {
       return values.map(function (value) {

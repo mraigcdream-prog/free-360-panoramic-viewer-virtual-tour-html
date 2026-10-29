@@ -182,18 +182,32 @@ window.SITE = {
       status: "open",
       beds: "—",
       baths: "—",
-      area: "—",
+      area: "129,2 m² (sử dụng riêng 59,3 m²)",
+      extraFacts: [
+        { label: { vi: "Địa chỉ", en: "Address" }, value: { vi: "Phường Đại Kim, quận Hoàng Mai, Hà Nội", en: "Dai Kim Ward, Hoang Mai District, Hanoi" } },
+        { label: { vi: "Pháp lý", en: "Legal status" }, value: { vi: "Sổ đỏ (Sở TN&MT Hà Nội cấp năm 2017)", en: "Land use rights certificate (issued by Hanoi DONRE, 2017)" } },
+        { label: { vi: "Thời hạn sử dụng", en: "Land use term" }, value: { vi: "Lâu dài", en: "Long-term" } },
+        { label: { vi: "Nhà ở", en: "House" }, value: { vi: "Nhà chưa cập nhật trên sổ", en: "House not yet recorded on the certificate" } }
+      ],
       floor: { vi: "Cập nhật sau", en: "To be added" },
       aspect: { vi: "Cập nhật sau", en: "To be added" },
       name: { vi: "Bán nhà gần đường vành đai 2.5", en: "House for sale near Ring Road 2.5" },
       summary: {
-        vi: "Nhà rao bán tại Hà Nội, gần đường Vành đai 2.5. Giá: Liên hệ. Diện tích, số phòng và hướng sẽ cập nhật sau.",
-        en: "House for sale in Hanoi, near Ring Road 2.5. Price: contact us. Area, rooms and aspect to be added."
+        vi: "Nhà rao bán tại phường Đại Kim, quận Hoàng Mai, Hà Nội, gần đường Vành đai 2.5. Diện tích đất 129,2 m² (sử dụng riêng 59,3 m²), có sổ đỏ. Giá: Liên hệ.",
+        en: "House for sale in Dai Kim Ward, Hoang Mai District, Hanoi, near Ring Road 2.5. Land area 129.2 m² (59.3 m² private use), with a land use rights certificate. Price: contact us."
       },
       description: [
         {
-          vi: "Vị trí: Hà Nội, gần đường Vành đai 2.5. Địa chỉ chi tiết cập nhật sau.",
-          en: "Location: Hanoi, near Ring Road 2.5. Exact address to be added."
+          vi: "Vị trí: phường Đại Kim, quận Hoàng Mai, Hà Nội, gần đường Vành đai 2.5.",
+          en: "Location: Dai Kim Ward, Hoang Mai District, Hanoi, near Ring Road 2.5."
+        },
+        {
+          vi: "Diện tích đất 129,2 m², gồm 59,3 m² sử dụng riêng (30,0 m² đất ở tại đô thị + 29,3 m² đất vườn) và 69,9 m² đất vườn sử dụng chung (ngõ đi chung). Mục đích sử dụng: đất ở tại đô thị 30,0 m², đất vườn 99,2 m². Thời hạn: lâu dài.",
+          en: "Land area 129.2 m²: 59.3 m² private use (30.0 m² urban residential land + 29.3 m² garden land) and 69.9 m² shared-use garden land (shared alley). Land use purpose: urban residential land 30.0 m², garden land 99.2 m². Term: long-term."
+        },
+        {
+          vi: "Pháp lý: có sổ đỏ (giấy chứng nhận quyền sử dụng đất) do Sở Tài nguyên và Môi trường Hà Nội cấp năm 2017. Nguồn gốc: nhận chuyển nhượng quyền sử dụng đất được công nhận như Nhà nước giao đất có thu tiền sử dụng đất 30,0 m², không thu tiền sử dụng đất 99,2 m². Nhà ở chưa được cập nhật trên sổ.",
+          en: "Legal status: land use rights certificate (sổ đỏ) issued by the Hanoi Department of Natural Resources and Environment in 2017. Origin: transferred land use rights, recognized as state-allocated land with land use fee paid for 30.0 m² and without fee for 99.2 m². The house is not yet recorded on the certificate."
         },
         {
           vi: "Tour 360° hiện có phòng khách tầng 1 và phòng giặt phơi. Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.",

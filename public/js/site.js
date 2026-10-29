@@ -345,7 +345,7 @@
       [UI.floor, pick(item.floor)],
       [UI.aspect, pick(item.aspect)],
       [UI.type, pick(UI.types[item.type])]
-    ];
+    ].concat((item.extraFacts || []).map(function (f) { return [f.label, pick(f.value)]; }));
     const others = SITE.properties.filter(function (other) { return other.slug !== item.slug; });
     return '<article class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">' + t(UI.home) + '</a><span>/</span><a href="/can-ho">' + t(UI.nav.homes) + "</a><span>/</span><span>" + esc(item.code) + "</span></nav>" +
       '<div class="prop-top"><div><p class="kicker">' + t(UI.statuses[item.status]) + "</p><h1>" + t(item.name) + "</h1><p class=\"lede\">" + t(item.summary) + "</p>" +

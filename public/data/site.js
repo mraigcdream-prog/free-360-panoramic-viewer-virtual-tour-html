@@ -196,22 +196,36 @@ window.SITE = {
           en: "Location: Hanoi, near Ring Road 2.5. Exact address to be added."
         },
         {
-          vi: "Tour 360° hiện có cảnh phòng giặt phơi. Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.",
-          en: "The 360° tour currently shows the laundry & drying room. The photo has been digitally staged and may differ from reality."
+          vi: "Tour 360° hiện có phòng khách tầng 1 và phòng giặt phơi. Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.",
+          en: "The 360° tour currently shows the ground-floor living room and the laundry & drying room. The photo has been digitally staged and may differ from reality."
         }
       ],
-      cover: "/assets/gallery/card-n1.jpg?v=20261029s",
-      coverAlt: { vi: "Phòng giặt phơi nhà gần Vành đai 2.5", en: "Laundry & drying room of the house near Ring Road 2.5" },
+      cover: "/assets/gallery/card-n1.jpg?v=20261029lr",
+      coverAlt: { vi: "Phòng khách tầng 1 nhà gần Vành đai 2.5", en: "Ground-floor living room of the house near Ring Road 2.5" },
       tour: {
-        first: "balcony",
+        first: "living",
         scenes: [
+          {
+            id: "living",
+            name: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" },
+            image: "/assets/panoramas/n1-livingroom.jpg?v=20261029lr",
+            pitch: -6,
+            yaw: -140,
+            hotspots: [
+              { pitch: -6, yaw: 178, target: "balcony", targetPitch: 0, targetYaw: 0, text: { vi: "Phòng giặt phơi", en: "Laundry & drying room" } },
+              { pitch: 8, yaw: -100, text: { vi: "Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.", en: "This photo has been digitally staged and may differ from reality." } }
+            ],
+            info: []
+          },
           {
             id: "balcony",
             name: { vi: "Phòng giặt phơi", en: "Laundry & drying room" },
             image: "/assets/panoramas/n1-balcony.jpg?v=20261029s",
             pitch: 0,
             yaw: 0,
-            hotspots: [],
+            hotspots: [
+              { pitch: -6, yaw: 180, target: "living", targetPitch: -6, targetYaw: -140, text: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" } }
+            ],
             info: []
           }
         ]

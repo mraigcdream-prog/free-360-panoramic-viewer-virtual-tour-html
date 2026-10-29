@@ -176,9 +176,56 @@ window.SITE = {
   },
   properties: [
     {
+      slug: "s1",
+      code: "SB9A-SP12-16",
+      type: "shophouse",
+      deal: "rent",
+      status: "open",
+      beds: 3,
+      baths: "-",
+      area: "90 m²",
+      floor: { vi: "4 tầng", en: "4 storeys" },
+      aspect: { vi: "Căn góc 2 mặt tiền", en: "Corner unit, 2 frontages" },
+      priceText: { vi: "30 triệu/tháng", en: "30 million VND/month" },
+      phone: "0399 905 416",
+      extraFacts: [
+        { label: { vi: "Địa chỉ", en: "Address" }, value: { vi: "Phân khu Sao Biển 9A, Vinhomes Ocean Park 1, Gia Lâm, Hà Nội", en: "Sao Bien 9A, Vinhomes Ocean Park 1, Gia Lam, Hanoi" } },
+        { label: { vi: "Phong cách", en: "Style" }, value: { vi: "Tân cổ điển", en: "Neoclassical" } },
+        { label: { vi: "Hoàn thiện", en: "Finish" }, value: { vi: "Hoàn thiện cơ bản", en: "Basic finish" } },
+        { label: { vi: "Liên hệ", en: "Contact" }, value: { vi: "0399 905 416", en: "0399 905 416" } }
+      ],
+      name: { vi: "Cho thuê shophouse căn góc SB9A-SP12-16", en: "Corner shophouse SB9A-SP12-16 for rent" },
+      summary: {
+        vi: "Shophouse căn góc tại phân khu Sao Biển 9A, Vinhomes Ocean Park 1, Gia Lâm, Hà Nội. Diện tích 90 m², 4 tầng, 2 mặt tiền rộng. Giá thuê 30 triệu/tháng.",
+        en: "Corner shophouse in Sao Bien 9A, Vinhomes Ocean Park 1, Gia Lam, Hanoi. 90 m², 4 storeys, two wide frontages. Rent: 30 million VND/month."
+      },
+      description: [
+        {
+          vi: "Căn góc 2 mặt tiền rộng, phù hợp làm văn phòng hoặc kinh doanh. Nhà 4 tầng, diện tích 90 m², 3 phòng ngủ, phong cách tân cổ điển.",
+          en: "Corner unit with two wide frontages, suited to an office or a business. 4 storeys, 90 m², 3 bedrooms, neoclassical style."
+        },
+        {
+          vi: "Nhà hoàn thiện cơ bản. Giá thuê 30 triệu/tháng. Liên hệ: 0399 905 416.",
+          en: "Basic finish. Rent: 30 million VND/month. Contact: 0399 905 416."
+        }
+      ],
+      cover: "/assets/gallery/card-s1.jpg?v=20261030a",
+      coverAlt: { vi: "Shophouse căn góc SB9A-SP12-16 nhìn từ góc phố", en: "Corner shophouse SB9A-SP12-16 seen from the street corner" },
+      photos: [
+        { src: "/assets/gallery/s1/photo-1.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-1-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền góc phố", en: "Street-corner frontage" }, alt: { vi: "Mặt tiền góc phố - shophouse SB9A-SP12-16", en: "Street-corner frontage - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-2.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-2-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền tầng trệt", en: "Ground-floor frontage" }, alt: { vi: "Mặt tiền tầng trệt - shophouse SB9A-SP12-16", en: "Ground-floor frontage - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-3.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-3-thumb.jpg?v=20261030a", caption: { vi: "Toàn cảnh căn góc", en: "Corner view" }, alt: { vi: "Toàn cảnh căn góc - shophouse SB9A-SP12-16", en: "Corner view - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-4.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-4-thumb.jpg?v=20261030a", caption: { vi: "Toàn cảnh căn góc từ trên cao", en: "Corner view from above" }, alt: { vi: "Toàn cảnh căn góc từ trên cao - shophouse SB9A-SP12-16", en: "Corner view from above - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-5.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-5-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền tầng trệt và ban công", en: "Ground-floor frontage and balcony" }, alt: { vi: "Mặt tiền tầng trệt và ban công - shophouse SB9A-SP12-16", en: "Ground-floor frontage and balcony - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-6.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-6-thumb.jpg?v=20261030a", caption: { vi: "Lối vào góc phố", en: "Street-corner entrance" }, alt: { vi: "Lối vào góc phố - shophouse SB9A-SP12-16", en: "Street-corner entrance - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-7.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-7-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền hai mặt phố", en: "Two street frontages" }, alt: { vi: "Mặt tiền hai mặt phố - shophouse SB9A-SP12-16", en: "Two street frontages - shophouse SB9A-SP12-16" } }
+      ]
+    },
+    {
       slug: "n1",
       code: "N1-01",
       type: "house",
+      deal: "sale",
       status: "open",
       beds: "—",
       baths: "—",

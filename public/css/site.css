@@ -409,3 +409,11 @@ body.lb-open { overflow: hidden; }
   .lb-prev { left: calc(50% - 60px); } .lb-next { right: calc(50% - 60px); }
   .lightbox img { max-height: calc(100vh - 180px); }
 }
+
+/* Cho thue + gia tren the + video (tuy chon theo can) */
+.badge.rent { border-color: var(--pine); background: var(--pine); color: #fff; }
+.card-price { margin: 4px 0 0; color: var(--pine); font-weight: 700; }
+.price-phone { display: block; margin-top: 8px; color: var(--pine); font-weight: 600; text-decoration: none; }
+.listing-video { margin: 28px 0 8px; }
+.listing-video h2 { margin: 0 0 14px; }
+.listing-video video { display: block; width: 100%; max-width: 420px; aspect-ratio: 9 / 16; background: #000; border-radius: 14px; box-shadow: var(--shadow); }

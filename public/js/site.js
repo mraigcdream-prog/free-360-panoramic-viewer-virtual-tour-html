@@ -33,8 +33,14 @@
     beds: { vi: "Phòng ngủ", en: "Bedrooms" },
     type: { vi: "Loại căn", en: "Type" },
     status: { vi: "Trạng thái", en: "Status" },
-    types: { apartment: { vi: "Căn hộ", en: "Apartment" }, house: { vi: "Nhà riêng", en: "House" }, penthouse: { vi: "Penthouse", en: "Penthouse" } },
+    types: { apartment: { vi: "Căn hộ", en: "Apartment" }, house: { vi: "Nhà riêng", en: "House" }, shophouse: { vi: "Shophouse", en: "Shophouse" }, penthouse: { vi: "Penthouse", en: "Penthouse" } },
     statuses: { open: { vi: "Đang mở bán", en: "Open for viewing" }, held: { vi: "Đã giữ chỗ", en: "On hold" } },
+    deal: { vi: "Hình thức", en: "Listing" },
+    deals: { sale: { vi: "Bán", en: "For sale" }, rent: { vi: "Cho thuê", en: "For rent" } },
+    seeDetail: { vi: "Xem chi tiết", en: "View details" },
+    rentPrice: { vi: "Giá thuê", en: "Rent" },
+    call: { vi: "Gọi", en: "Call" },
+    video: { vi: "Video", en: "Video" },
     count: { vi: "căn", en: "homes" },
     empty: { vi: "Không có căn khớp bộ lọc.", en: "No home matches these filters." },
     reset: { vi: "Xóa bộ lọc", en: "Clear filters" },
@@ -113,7 +119,7 @@
   };
 
   let lang = "vi";
-  const filters = { beds: "all", type: "all", status: "all" };
+  const filters = { beds: "all", type: "all", status: "all", deal: "all" };
 
   function esc(value) {
     return String(value ?? "").replace(/[&<>"']/g, function (ch) {
@@ -141,13 +147,15 @@
     filters.beds = params.get("phong") || "all";
     filters.type = params.get("loai") || "all";
     filters.status = params.get("tt") || "all";
+    filters.deal = ({ ban: "sale", "cho-thue": "rent" })[params.get("ht")] || "all";
   }
   function writeFilters() {
     const params = new URLSearchParams(location.search);
-    ["phong", "loai", "tt"].forEach(function (key) { params.delete(key); });
+    ["phong", "loai", "tt", "ht"].forEach(function (key) { params.delete(key); });
     if (filters.beds !== "all") params.set("phong", filters.beds);
     if (filters.type !== "all") params.set("loai", filters.type);
     if (filters.status !== "all") params.set("tt", filters.status);
+    if (filters.deal !== "all") params.set("ht", filters.deal === "rent" ? "cho-thue" : "ban");
     const qs = params.toString();
     history.replaceState({}, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
   }
@@ -166,6 +174,7 @@
       if (filters.beds !== "all" && String(item.beds) !== String(filters.beds)) return false;
       if (filters.type !== "all" && item.type !== filters.type) return false;
       if (filters.status !== "all" && item.status !== filters.status) return false;
+      if (filters.deal !== "all" && (item.deal || "sale") !== filters.deal) return false;
       return true;
     });
   }
@@ -301,26 +310,32 @@
   function cardHTML(item) {
     return '<a class="card" href="' + propertyUrl(item.slug) + '">' +
       '<img src="' + esc(item.cover) + '" alt="' + t(item.coverAlt) + '" width="1200" height="900" loading="lazy">' +
-      '<div class="card-body"><span class="badge' + (item.status === "held" ? " held" : "") + '">' + t(UI.statuses[item.status]) + "</span>" +
+      '<div class="card-body"><span class="badge' + (item.status === "held" ? " held" : "") + (item.deal === "rent" ? " rent" : "") + '">' + t(item.deal === "rent" ? UI.deals.rent : UI.statuses[item.status]) + "</span>" +
       "<h2>" + esc(item.code) + "</h2><p>" + t(item.name) + "</p>" +
       '<p class="meta">' + t(UI.types[item.type]) + " · " + item.beds + " " + pick(UI.beds).toLowerCase() + " · " + esc(item.area) + "</p>" +
-      '<span class="card-go">' + pick(UI.seeTour) + "</span></div></a>";
+      (item.priceText ? '<p class="card-price">' + (item.deal === "rent" ? t(UI.rentPrice) + ": " : "") + t(item.priceText) + "</p>" : "") +
+      '<span class="card-go">' + pick(hasTour(item) ? UI.seeTour : UI.seeDetail) + "</span></div></a>";
+  }
+  function hasTour(item) {
+    return !!(item.tour && item.tour.scenes && item.tour.scenes.length);
   }
 
   function listingHTML() {
     const list = filteredProperties();
     const bedValues = ["all", "2", "3"];
-    const typeValues = ["all", "apartment", "penthouse", "house"];
+    const typeValues = ["all", "apartment", "penthouse", "house", "shophouse"];
+    const dealValues = ["all", "sale", "rent"];
     const statusValues = ["all", "open", "held"];
     const chips = function (group, values) {
       return values.map(function (value) {
-        const label = value === "all" ? pick(UI.all) : (group === "beds" ? value : pick(UI[group === "type" ? "types" : "statuses"][value]));
+        const label = value === "all" ? pick(UI.all) : (group === "beds" ? value : pick(UI[group === "type" ? "types" : group === "deal" ? "deals" : "statuses"][value]));
         const id = "f-" + group + "-" + value;
         return chip(id, group, value, label, filters[group] === value);
       }).join("");
     };
     return '<section class="page-intro"><div class="wrap"><p class="kicker">' + t(SITE.brand.name) + "</p><h1>" + t(UI.listingTitle) + "</h1><p class=\"lede\">" + t(UI.listingLede) + "</p>" +
       '<div class="filters">' +
+        '<div><span class="filter-label" id="label-deal">' + t(UI.deal) + '</span><div class="chips" role="group" aria-labelledby="label-deal">' + chips("deal", dealValues) + "</div></div>" +
         '<div><span class="filter-label" id="label-beds">' + t(UI.beds) + '</span><div class="chips" role="group" aria-labelledby="label-beds">' + chips("beds", bedValues) + "</div></div>" +
         '<div><span class="filter-label" id="label-type">' + t(UI.type) + '</span><div class="chips" role="group" aria-labelledby="label-type">' + chips("type", typeValues) + "</div></div>" +
         '<div><span class="filter-label" id="label-status">' + t(UI.status) + '</span><div class="chips" role="group" aria-labelledby="label-status">' + chips("status", statusValues) + "</div></div>" +
@@ -345,17 +360,22 @@
       [UI.floor, pick(item.floor)],
       [UI.aspect, pick(item.aspect)],
       [UI.type, pick(UI.types[item.type])]
-    ].concat((item.extraFacts || []).map(function (f) { return [f.label, pick(f.value)]; }));
+    ].filter(function (f) { return f[1] !== "-" && f[1] !== ""; }).concat((item.extraFacts || []).map(function (f) { return [f.label, pick(f.value)]; }));
     const others = SITE.properties.filter(function (other) { return other.slug !== item.slug; });
     return '<article class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">' + t(UI.home) + '</a><span>/</span><a href="/can-ho">' + t(UI.nav.homes) + "</a><span>/</span><span>" + esc(item.code) + "</span></nav>" +
-      '<div class="prop-top"><div><p class="kicker">' + t(UI.statuses[item.status]) + "</p><h1>" + t(item.name) + "</h1><p class=\"lede\">" + t(item.summary) + "</p>" +
+      '<div class="prop-top"><div><p class="kicker">' + t(item.deal === "rent" ? UI.deals.rent : UI.statuses[item.status]) + "</p><h1>" + t(item.name) + "</h1><p class=\"lede\">" + t(item.summary) + "</p>" +
       '<ul class="facts">' + facts.map(function (fact) {
         return "<li><span>" + t(fact[0]) + "</span>" + esc(fact[1]) + "</li>";
-      }).join("") + '<li><span>Tour</span>' + item.tour.scenes.length + " " + pick(UI.stops) + "</li></ul></div>" +
-      '<div class="price-box"><span>' + t(UI.price) + "</span><strong>" + t(UI.unpublished) + '</strong><a class="btn btn-primary" href="/lien-he?can=' + encodeURIComponent(item.slug) + '">' + t(UI.book) + "</a></div></div>" +
-      '<div id="tour-host" class="tour-host"></div>' + albumHTML(item) +
-      '<div class="split"><div class="prose">' + item.description.map(function (para) { return "<p>" + t(para) + "</p>"; }).join("") + '</div><aside class="photo-note">' + t(UI.photoNote) + "</aside></div>" +
+      }).join("") + (hasTour(item) ? '<li><span>Tour</span>' + item.tour.scenes.length + " " + pick(UI.stops) + "</li>" : "") + "</ul></div>" +
+      '<div class="price-box"><span>' + t(item.deal === "rent" ? UI.rentPrice : UI.price) + "</span><strong>" + t(item.priceText || UI.unpublished) + "</strong>" + (item.phone ? '<a class="price-phone" href="tel:' + esc(String(item.phone).replace(/\s+/g, "")) + '">' + t(UI.call) + " " + esc(item.phone) + "</a>" : "") + '<a class="btn btn-primary" href="/lien-he?can=' + encodeURIComponent(item.slug) + '">' + t(UI.book) + "</a></div></div>" +
+      (hasTour(item) ? '<div id="tour-host" class="tour-host"></div>' : "") + albumHTML(item) + videoHTML(item) +
+      '<div class="split"><div class="prose">' + item.description.map(function (para) { return "<p>" + t(para) + "</p>"; }).join("") + '</div>' + (hasTour(item) ? '<aside class="photo-note">' + t(UI.photoNote) + "</aside>" : "") + "</div>" +
       "<section class=\"section\"><h2>" + t(UI.other) + '</h2><div class="cards">' + others.map(cardHTML).join("") + "</div></section></article>";
+  }
+
+  function videoHTML(item) {
+    if (!item.video || !item.video.src) return "";
+    return '<section class="listing-video" aria-label="' + t(item.video.title || UI.video) + '"><h2>' + t(item.video.title || UI.video) + '</h2><video controls playsinline preload="none"' + (item.video.poster ? ' poster="' + esc(item.video.poster) + '"' : "") + '><source src="' + esc(item.video.src) + '" type="video/mp4"></video></section>';
   }
 
   function albumHTML(item) {
@@ -450,7 +470,7 @@
       main.innerHTML = propertyHTML();
       setupAlbum(item);
       const host = document.getElementById("tour-host");
-      if (host && item && window.SXTour) {
+      if (host && item && hasTour(item) && window.SXTour) {
         SXTour.mount(host, item.tour, {
           lang: lang,
           resume: tourState,
@@ -653,6 +673,7 @@
       filters.beds = "all";
       filters.type = "all";
       filters.status = "all";
+      filters.deal = "all";
       writeFilters();
       renderMain();
       return;

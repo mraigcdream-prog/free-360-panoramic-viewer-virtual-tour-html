@@ -177,6 +177,7 @@ window.SITE = {
   properties: [
     {
       slug: "s1",
+      location: { lat: 20.99606, lng: 105.95447, zoom: 17, approx: true, label: { vi: "Phân khu Sao Biển 9A, Vinhomes Ocean Park 1, Gia Lâm, Hà Nội (vị trí gần đúng)", en: "Sao Bien 9A subdivision, Vinhomes Ocean Park 1, Gia Lam, Hanoi (approximate location)" } },
       code: "SB9A-SP12-16",
       type: "shophouse",
       deal: "rent",
@@ -209,20 +210,21 @@ window.SITE = {
           en: "Basic finish. Rent: 30 million VND/month. Contact: 0399 905 416."
         }
       ],
-      cover: "/assets/gallery/card-s1.jpg?v=20261030a",
+      cover: "/assets/gallery/card-s1.jpg?v=20261030b",
       coverAlt: { vi: "Shophouse căn góc SB9A-SP12-16 nhìn từ góc phố", en: "Corner shophouse SB9A-SP12-16 seen from the street corner" },
       photos: [
-        { src: "/assets/gallery/s1/photo-1.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-1-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền góc phố", en: "Street-corner frontage" }, alt: { vi: "Mặt tiền góc phố - shophouse SB9A-SP12-16", en: "Street-corner frontage - shophouse SB9A-SP12-16" } },
-        { src: "/assets/gallery/s1/photo-2.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-2-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền tầng trệt", en: "Ground-floor frontage" }, alt: { vi: "Mặt tiền tầng trệt - shophouse SB9A-SP12-16", en: "Ground-floor frontage - shophouse SB9A-SP12-16" } },
-        { src: "/assets/gallery/s1/photo-3.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-3-thumb.jpg?v=20261030a", caption: { vi: "Toàn cảnh căn góc", en: "Corner view" }, alt: { vi: "Toàn cảnh căn góc - shophouse SB9A-SP12-16", en: "Corner view - shophouse SB9A-SP12-16" } },
-        { src: "/assets/gallery/s1/photo-4.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-4-thumb.jpg?v=20261030a", caption: { vi: "Toàn cảnh căn góc từ trên cao", en: "Corner view from above" }, alt: { vi: "Toàn cảnh căn góc từ trên cao - shophouse SB9A-SP12-16", en: "Corner view from above - shophouse SB9A-SP12-16" } },
-        { src: "/assets/gallery/s1/photo-5.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-5-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền tầng trệt và ban công", en: "Ground-floor frontage and balcony" }, alt: { vi: "Mặt tiền tầng trệt và ban công - shophouse SB9A-SP12-16", en: "Ground-floor frontage and balcony - shophouse SB9A-SP12-16" } },
-        { src: "/assets/gallery/s1/photo-6.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-6-thumb.jpg?v=20261030a", caption: { vi: "Lối vào góc phố", en: "Street-corner entrance" }, alt: { vi: "Lối vào góc phố - shophouse SB9A-SP12-16", en: "Street-corner entrance - shophouse SB9A-SP12-16" } },
-        { src: "/assets/gallery/s1/photo-7.jpg?v=20261030a", thumb: "/assets/gallery/s1/photo-7-thumb.jpg?v=20261030a", caption: { vi: "Mặt tiền hai mặt phố", en: "Two street frontages" }, alt: { vi: "Mặt tiền hai mặt phố - shophouse SB9A-SP12-16", en: "Two street frontages - shophouse SB9A-SP12-16" } }
+        { src: "/assets/gallery/s1/photo-1.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-1-thumb.jpg?v=20261030b", caption: { vi: "Mặt tiền góc phố", en: "Street-corner frontage" }, alt: { vi: "Mặt tiền góc phố - shophouse SB9A-SP12-16", en: "Street-corner frontage - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-2.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-2-thumb.jpg?v=20261030b", caption: { vi: "Mặt tiền tầng trệt", en: "Ground-floor frontage" }, alt: { vi: "Mặt tiền tầng trệt - shophouse SB9A-SP12-16", en: "Ground-floor frontage - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-3.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-3-thumb.jpg?v=20261030b", caption: { vi: "Toàn cảnh căn góc", en: "Corner view" }, alt: { vi: "Toàn cảnh căn góc - shophouse SB9A-SP12-16", en: "Corner view - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-4.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-4-thumb.jpg?v=20261030b", caption: { vi: "Toàn cảnh căn góc từ trên cao", en: "Corner view from above" }, alt: { vi: "Toàn cảnh căn góc từ trên cao - shophouse SB9A-SP12-16", en: "Corner view from above - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-5.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-5-thumb.jpg?v=20261030b", caption: { vi: "Mặt tiền tầng trệt và ban công", en: "Ground-floor frontage and balcony" }, alt: { vi: "Mặt tiền tầng trệt và ban công - shophouse SB9A-SP12-16", en: "Ground-floor frontage and balcony - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-6.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-6-thumb.jpg?v=20261030b", caption: { vi: "Lối vào góc phố", en: "Street-corner entrance" }, alt: { vi: "Lối vào góc phố - shophouse SB9A-SP12-16", en: "Street-corner entrance - shophouse SB9A-SP12-16" } },
+        { src: "/assets/gallery/s1/photo-7.jpg?v=20261030b", thumb: "/assets/gallery/s1/photo-7-thumb.jpg?v=20261030b", caption: { vi: "Mặt tiền hai mặt phố", en: "Two street frontages" }, alt: { vi: "Mặt tiền hai mặt phố - shophouse SB9A-SP12-16", en: "Two street frontages - shophouse SB9A-SP12-16" } }
       ]
     },
     {
       slug: "n1",
+      location: { lat: 20.97440, lng: 105.82194, zoom: 15, approx: true, label: { vi: "Khu vực Phường Đại Kim (vị trí gần đúng)", en: "Dai Kim ward area (approximate location)" } },
       code: "N1-01",
       type: "house",
       deal: "sale",

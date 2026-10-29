@@ -41,6 +41,11 @@
     rentPrice: { vi: "Giá thuê", en: "Rent" },
     call: { vi: "Gọi", en: "Call" },
     video: { vi: "Video", en: "Video" },
+    listingMapTitle: { vi: "Vị trí trên bản đồ", en: "Location on the map" },
+    mapApprox: { vi: "Vị trí gần đúng", en: "Approximate location" },
+    openGmaps: { vi: "Mở Google Maps", en: "Open Google Maps" },
+    directions: { vi: "Chỉ đường", en: "Directions" },
+    mapCredit: { vi: "Bản đồ © OpenStreetMap contributors", en: "Map © OpenStreetMap contributors" },
     count: { vi: "căn", en: "homes" },
     empty: { vi: "Không có căn khớp bộ lọc.", en: "No home matches these filters." },
     reset: { vi: "Xóa bộ lọc", en: "Clear filters" },
@@ -314,7 +319,7 @@
       "<h2>" + esc(item.code) + "</h2><p>" + t(item.name) + "</p>" +
       '<p class="meta">' + t(UI.types[item.type]) + " · " + item.beds + " " + pick(UI.beds).toLowerCase() + " · " + esc(item.area) + "</p>" +
       (item.priceText ? '<p class="card-price">' + (item.deal === "rent" ? t(UI.rentPrice) + ": " : "") + t(item.priceText) + "</p>" : "") +
-      '<span class="card-go">' + pick(hasTour(item) ? UI.seeTour : UI.seeDetail) + "</span></div></a>";
+      (item.location ? '<p class="card-map">📍 ' + t(UI.listingMapTitle) + "</p>" : "") + '<span class="card-go">' + pick(hasTour(item) ? UI.seeTour : UI.seeDetail) + "</span></div></a>";
   }
   function hasTour(item) {
     return !!(item.tour && item.tour.scenes && item.tour.scenes.length);
@@ -368,9 +373,24 @@
         return "<li><span>" + t(fact[0]) + "</span>" + esc(fact[1]) + "</li>";
       }).join("") + (hasTour(item) ? '<li><span>Tour</span>' + item.tour.scenes.length + " " + pick(UI.stops) + "</li>" : "") + "</ul></div>" +
       '<div class="price-box"><span>' + t(item.deal === "rent" ? UI.rentPrice : UI.price) + "</span><strong>" + t(item.priceText || UI.unpublished) + "</strong>" + (item.phone ? '<a class="price-phone" href="tel:' + esc(String(item.phone).replace(/\s+/g, "")) + '">' + t(UI.call) + " " + esc(item.phone) + "</a>" : "") + '<a class="btn btn-primary" href="/lien-he?can=' + encodeURIComponent(item.slug) + '">' + t(UI.book) + "</a></div></div>" +
-      (hasTour(item) ? '<div id="tour-host" class="tour-host"></div>' : "") + albumHTML(item) + videoHTML(item) +
+      (hasTour(item) ? '<div id="tour-host" class="tour-host"></div>' : "") + albumHTML(item) + videoHTML(item) + mapHTML(item) +
       '<div class="split"><div class="prose">' + item.description.map(function (para) { return "<p>" + t(para) + "</p>"; }).join("") + '</div>' + (hasTour(item) ? '<aside class="photo-note">' + t(UI.photoNote) + "</aside>" : "") + "</div>" +
       "<section class=\"section\"><h2>" + t(UI.other) + '</h2><div class="cards">' + others.map(cardHTML).join("") + "</div></section></article>";
+  }
+
+  function mapHTML(item) {
+    const loc = item.location;
+    if (!loc || !isFinite(loc.lat) || !isFinite(loc.lng)) return "";
+    const z = loc.zoom || 16;
+    const span = 0.0055 * Math.pow(2, 17 - z);
+    const bbox = [loc.lng - span * 1.6, loc.lat - span, loc.lng + span * 1.6, loc.lat + span].map(function (n) { return n.toFixed(5); }).join(",");
+    const ll = loc.lat + "," + loc.lng;
+    const embed = "https://www.openstreetmap.org/export/embed.html?bbox=" + encodeURIComponent(bbox) + "&layer=mapnik&marker=" + encodeURIComponent(ll);
+    return '<section class="listing-map" id="ban-do"><h2>' + t(UI.listingMapTitle) + "</h2>" +
+      '<p class="lmap-label">' + t(loc.label) + (loc.approx && !/gần đúng|approx/i.test(pick(loc.label)) ? ' <span class="lmap-approx">' + t(UI.mapApprox) + "</span>" : "") + "</p>" +
+      '<div class="lmap-frame"><iframe title="' + t(UI.listingMapTitle) + '" src="' + esc(embed) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>' +
+      '<div class="lmap-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps?q=' + ll + "&z=" + z + '">' + t(UI.openGmaps) + '</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + ll + '">' + t(UI.directions) + "</a></div>" +
+      '<p class="lmap-credit">' + t(UI.mapCredit) + "</p></section>";
   }
 
   function videoHTML(item) {

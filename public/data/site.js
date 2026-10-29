@@ -214,15 +214,20 @@ window.SITE = {
           en: "The 360° tour currently shows the ground-floor living room, the kitchen and the laundry & drying room. The photos have been digitally staged and may differ from reality."
         }
       ],
-      cover: "/assets/gallery/card-n1.jpg?v=20261029d",
+      cover: "/assets/gallery/card-n1.jpg?v=20261029e",
       coverAlt: { vi: "Phòng khách tầng 1 nhà gần Vành đai 2.5", en: "Ground-floor living room of the house near Ring Road 2.5" },
+      photos: [
+        { src: "/assets/gallery/n1/photo-1.jpg?v=20261029e", thumb: "/assets/gallery/n1/photo-1-thumb.jpg?v=20261029e", caption: { vi: "Phòng tầng trên", en: "Upstairs room" }, alt: { vi: "Phòng tầng trên - nhà gần Vành đai 2.5", en: "Upstairs room - house near Ring Road 2.5" } },
+        { src: "/assets/gallery/n1/photo-3.jpg?v=20261029e", thumb: "/assets/gallery/n1/photo-3-thumb.jpg?v=20261029e", caption: { vi: "Phòng ngủ", en: "Bedroom" }, alt: { vi: "Phòng ngủ - nhà gần Vành đai 2.5", en: "Bedroom - house near Ring Road 2.5" } },
+        { src: "/assets/gallery/n1/photo-4.jpg?v=20261029e", thumb: "/assets/gallery/n1/photo-4-thumb.jpg?v=20261029e", caption: { vi: "Giếng trời", en: "Skylight" }, alt: { vi: "Giếng trời - nhà gần Vành đai 2.5", en: "Skylight - house near Ring Road 2.5" } }
+      ],
       tour: {
         first: "living",
         scenes: [
           {
             id: "living",
             name: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" },
-            image: "/assets/panoramas/n1-livingroom.jpg?v=20261029d",
+            image: "/assets/panoramas/n1-livingroom.jpg?v=20261029e",
             pitch: -6,
             yaw: -140,
             hotspots: [
@@ -235,7 +240,7 @@ window.SITE = {
           {
             id: "kitchen",
             name: { vi: "Phòng bếp", en: "Kitchen" },
-            image: "/assets/panoramas/n1-kitchen.jpg?v=20261029d",
+            image: "/assets/panoramas/n1-kitchen.jpg?v=20261029e",
             pitch: -6,
             yaw: -60,
             hotspots: [

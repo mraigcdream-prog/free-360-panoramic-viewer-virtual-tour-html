@@ -353,9 +353,56 @@
         return "<li><span>" + t(fact[0]) + "</span>" + esc(fact[1]) + "</li>";
       }).join("") + '<li><span>Tour</span>' + item.tour.scenes.length + " " + pick(UI.stops) + "</li></ul></div>" +
       '<div class="price-box"><span>' + t(UI.price) + "</span><strong>" + t(UI.unpublished) + '</strong><a class="btn btn-primary" href="/lien-he?can=' + encodeURIComponent(item.slug) + '">' + t(UI.book) + "</a></div></div>" +
-      '<div id="tour-host" class="tour-host"></div>' +
+      '<div id="tour-host" class="tour-host"></div>' + albumHTML(item) +
       '<div class="split"><div class="prose">' + item.description.map(function (para) { return "<p>" + t(para) + "</p>"; }).join("") + '</div><aside class="photo-note">' + t(UI.photoNote) + "</aside></div>" +
       "<section class=\"section\"><h2>" + t(UI.other) + '</h2><div class="cards">' + others.map(cardHTML).join("") + "</div></section></article>";
+  }
+
+  function albumHTML(item) {
+    if (!item.photos || !item.photos.length) return "";
+    const title = { vi: "Album ảnh", en: "Photo album" };
+    return '<section class="album" aria-label="' + t(title) + '"><h2>' + t(title) + '</h2><div class="album-grid">' + item.photos.map(function (p, i) {
+      return '<figure><button type="button" class="album-thumb" data-album-index="' + i + '" aria-label="' + t(p.caption) + '"><img src="' + esc(p.thumb || p.src) + '" alt="' + t(p.alt || p.caption) + '" loading="lazy" decoding="async"></button><figcaption>' + t(p.caption) + "</figcaption></figure>";
+    }).join("") + "</div></section>";
+  }
+
+  function setupAlbum(item) {
+    if (!item || !item.photos || !item.photos.length) return;
+    const photos = item.photos;
+    let idx = 0, box = null, lastFocus = null, startX = null;
+    function build() {
+      box = document.createElement("div");
+      box.className = "lightbox";
+      box.setAttribute("role", "dialog");
+      box.setAttribute("aria-modal", "true");
+      box.innerHTML = '<button type="button" class="lb-close" aria-label="Close">&times;</button><button type="button" class="lb-prev" aria-label="Previous">&#8249;</button><figure><img alt=""><figcaption></figcaption></figure><button type="button" class="lb-next" aria-label="Next">&#8250;</button>';
+      document.body.appendChild(box);
+      box.querySelector(".lb-close").addEventListener("click", close);
+      box.querySelector(".lb-prev").addEventListener("click", function () { show(idx - 1); });
+      box.querySelector(".lb-next").addEventListener("click", function () { show(idx + 1); });
+      box.addEventListener("click", function (e) { if (e.target === box || e.target.tagName === "FIGURE") close(); });
+      box.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+      box.addEventListener("touchend", function (e) { if (startX === null) return; const dx = e.changedTouches[0].clientX - startX; startX = null; if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1)); });
+      document.addEventListener("keydown", function (e) {
+        if (!box || box.hidden) return;
+        if (e.key === "Escape") { e.stopPropagation(); close(); }
+        else if (e.key === "ArrowLeft") show(idx - 1);
+        else if (e.key === "ArrowRight") show(idx + 1);
+      }, true);
+    }
+    function show(i) {
+      idx = (i + photos.length) % photos.length;
+      const p = photos[idx], img = box.querySelector("img");
+      img.src = p.src; img.alt = pick(p.alt || p.caption);
+      box.querySelector("figcaption").textContent = pick(p.caption) + " (" + (idx + 1) + "/" + photos.length + ")";
+      const many = photos.length > 1;
+      box.querySelector(".lb-prev").hidden = !many; box.querySelector(".lb-next").hidden = !many;
+    }
+    function open(i) { if (!box) build(); lastFocus = document.activeElement; box.hidden = false; document.body.classList.add("lb-open"); show(i); box.querySelector(".lb-close").focus(); }
+    function close() { box.hidden = true; document.body.classList.remove("lb-open"); if (lastFocus) lastFocus.focus(); }
+    document.querySelectorAll("[data-album-index]").forEach(function (btn) {
+      btn.addEventListener("click", function () { open(Number(btn.getAttribute("data-album-index"))); });
+    });
   }
 
   function contactHTML() {
@@ -401,6 +448,7 @@
       const item = findProperty(document.body.dataset.slug);
       setTitle((item ? pick(item.name) : pick(UI.missingHome)) + " — " + SITE.brand.name);
       main.innerHTML = propertyHTML();
+      setupAlbum(item);
       const host = document.getElementById("tour-host");
       if (host && item && window.SXTour) {
         SXTour.mount(host, item.tour, {

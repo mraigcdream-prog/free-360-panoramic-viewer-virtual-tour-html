@@ -210,11 +210,11 @@ window.SITE = {
           en: "Legal status: land use rights certificate (sổ đỏ) issued by the Hanoi Department of Natural Resources and Environment in 2017. Origin: transferred land use rights, recognized as state-allocated land with land use fee paid for 30.0 m² and without fee for 99.2 m². The house is not yet recorded on the certificate."
         },
         {
-          vi: "Tour 360° hiện có phòng khách tầng 1 và phòng giặt phơi. Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.",
-          en: "The 360° tour currently shows the ground-floor living room and the laundry & drying room. The photo has been digitally staged and may differ from reality."
+          vi: "Tour 360° hiện có phòng khách tầng 1, phòng bếp và phòng giặt phơi. Các ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.",
+          en: "The 360° tour currently shows the ground-floor living room, the kitchen and the laundry & drying room. The photos have been digitally staged and may differ from reality."
         }
       ],
-      cover: "/assets/gallery/card-n1.jpg?v=20261029lr",
+      cover: "/assets/gallery/card-n1.jpg?v=20261029d",
       coverAlt: { vi: "Phòng khách tầng 1 nhà gần Vành đai 2.5", en: "Ground-floor living room of the house near Ring Road 2.5" },
       tour: {
         first: "living",
@@ -222,11 +222,25 @@ window.SITE = {
           {
             id: "living",
             name: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" },
-            image: "/assets/panoramas/n1-livingroom.jpg?v=20261029lr",
+            image: "/assets/panoramas/n1-livingroom.jpg?v=20261029d",
             pitch: -6,
             yaw: -140,
             hotspots: [
               { pitch: -6, yaw: 178, target: "balcony", targetPitch: 0, targetYaw: 0, text: { vi: "Phòng giặt phơi", en: "Laundry & drying room" } },
+              { pitch: -4, yaw: -30, target: "kitchen", targetPitch: -6, targetYaw: -60, text: { vi: "Phòng bếp", en: "Kitchen" } },
+              { pitch: 8, yaw: -100, text: { vi: "Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.", en: "This photo has been digitally staged and may differ from reality." } }
+            ],
+            info: []
+          },
+          {
+            id: "kitchen",
+            name: { vi: "Phòng bếp", en: "Kitchen" },
+            image: "/assets/panoramas/n1-kitchen.jpg?v=20261029d",
+            pitch: -6,
+            yaw: -60,
+            hotspots: [
+              { pitch: -6, yaw: 120, target: "living", targetPitch: -6, targetYaw: -140, text: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" } },
+              { pitch: -2, yaw: 140, target: "balcony", targetPitch: 0, targetYaw: 0, text: { vi: "Phòng giặt phơi", en: "Laundry & drying room" } },
               { pitch: 8, yaw: -100, text: { vi: "Ảnh đã được dàn dựng nội thất bằng kỹ thuật số, có thể khác thực tế.", en: "This photo has been digitally staged and may differ from reality." } }
             ],
             info: []
@@ -238,7 +252,8 @@ window.SITE = {
             pitch: 0,
             yaw: 0,
             hotspots: [
-              { pitch: -6, yaw: 180, target: "living", targetPitch: -6, targetYaw: -140, text: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" } }
+              { pitch: -6, yaw: 180, target: "living", targetPitch: -6, targetYaw: -140, text: { vi: "Phòng khách tầng 1", en: "Ground-floor living room" } },
+              { pitch: -6, yaw: 160, target: "kitchen", targetPitch: -6, targetYaw: -60, text: { vi: "Phòng bếp", en: "Kitchen" } }
             ],
             info: []
           }
